@@ -32,20 +32,20 @@ func init() {
 	})
 }
 
-// `kid` の生成（簡単なbase64エンコード）
+// `kid` の生成（ランダムな base64 エンコード）
 func generateKeyID() string {
 	b := make([]byte, 32)
 	rand.Read(b)
 	return base64.RawURLEncoding.EncodeToString(b)
 }
 
-// JWT を生成
-func GenerateJWT(sub string) string {
+func GenerateJWT(sub string, scope string) string {
 	claims := jwt.MapClaims{
-		"sub": sub,
-		"exp": time.Now().Add(time.Hour).Unix(),
-		"iat": time.Now().Unix(),
-		"kid": keyID, // JWK で識別するための Key ID
+		"sub":   sub,
+		"scope": scope,
+		"exp":   time.Now().Add(time.Hour).Unix(),
+		"iat":   time.Now().Unix(),
+		"kid":   keyID,
 	}
 
 	token := jwt.NewWithClaims(jwt.SigningMethodRS256, claims)
