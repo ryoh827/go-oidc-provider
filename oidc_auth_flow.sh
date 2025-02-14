@@ -5,7 +5,7 @@ set -e  # エラー時にスクリプトを停止
 # デフォルト値
 BASE_URL="http://localhost:8080"
 CLIENT_ID="my-client"
-REDIRECT_URI="http://localhost:3000/callback"
+REDIRECT_URI="http://localhost:8080/callback"
 STATE="xyz"
 DEFAULT_SCOPE="openid,email"
 
