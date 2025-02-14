@@ -1,7 +1,7 @@
 package main
 
 import (
-	"go-oidc-provider/server"
+	"github.com/ryoh827/go-oidc-provider/server"
 	"log"
 	"net/http"
 )

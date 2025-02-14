@@ -2,7 +2,7 @@ package server
 
 import (
 	"encoding/json"
-	"go-oidc-provider/config"
+	"github.com/ryoh827/go-oidc-provider/config"
 	"net/http"
 )
 
